@@ -45,7 +45,7 @@ async def main_loop(cookie: str):
                 logging.info(status_message)
 
                 # wait_time = 600
-                wait_time = random.randint(620, 670)
+                wait_time = random.randint(605, 610)
                 logging.info(f"Will attempt the next claim in {wait_time} seconds.")
 
                 for i in range(wait_time, 0, -1):
