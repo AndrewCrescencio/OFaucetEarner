@@ -15,7 +15,7 @@ Follow these steps to get the Faucetearner CLI up and running on your system.
 
    ```bash
    git clone https://github.com/AndrewCrescencio/OFaucetEarner.git
-   cd Faucetearner
+   cd OFaucetEarner
    ```
 
 2. **Create a virtual environment (recommended):**
