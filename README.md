@@ -1,13 +1,14 @@
-# Faucetearner: Async XRP Claimer Tool
+# OFaucetEarner: Async XRP Claimer Tool
 
 ## 🚀 Getting Started
 
-Follow these steps to get the Faucetearner CLI up and running on your system.
+Follow these steps to get the OFaucetEarner CLI up and running on your system.
 
 ### Prerequisites
 
 - **Python 3.8+**
 - **pip** (Python package installer)
+- **git** (to clone the repository)
 
 ### Installation & Usage
 
@@ -20,40 +21,60 @@ Follow these steps to get the Faucetearner CLI up and running on your system.
 
 2. **Create a virtual environment (recommended):**
 
-   **Git Bash:**
+   **Linux/Ubuntu:**
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+   **Git Bash (Windows):**
 
    ```bash
    python -m venv .venv
    source .venv/Scripts/activate
    ```
 
-   **PowerShell:**
+   **PowerShell (Windows):**
 
    ```powershell
    python -m venv .venv
    .\.venv\Scripts\Activate.ps1
    ```
 
+   > You'll know the virtual environment is activated when your prompt shows `(.venv)` at the beginning.
+
 3. **Install the required dependencies:**
 
    ```bash
+   pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
 4. **Create your `.env` file:**
-   In the project root, add only your user numeric cookie value:
+
+   In the project root, create a `.env` file with your numeric cookie value:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Then edit `.env` and add:
 
    ```dotenv
    COOKIE="132164123123"
    ```
 
-   The script automatically builds this header internally:
-   `reg=1; login=1; user=<COOKIE>`
+   > ⚠️ `COOKIE` must contain **digits only**.
 
-   `COOKIE` must contain digits only.
+   The script automatically builds this header internally:
+   ```
+   reg=1; login=1; user=<COOKIE>
+   ```
 
 5. **Run the script:**
-   Execute the script from the root directory. The app will automatically read `COOKIE` from `.env`.
+
+   Execute the script from the root directory. The app will automatically read `COOKIE` from `.env`:
 
    ```bash
    python -m src.main
@@ -66,6 +87,7 @@ Follow these steps to get the Faucetearner CLI up and running on your system.
    ```
 
 6. **Stopping the script:**
+
    Press `CTRL+C` at any time to gracefully stop the application.
 
 ## ⚠️ Disclaimer
